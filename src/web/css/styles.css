@@ -1,0 +1,32 @@
+.dvizh-gallery {
+    list-style-type:none; 
+    margin-left: -45px;
+}
+
+.dvizh-gallery-item{
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    padding: 3px;
+    margin: 3px;
+    border: 2px solid #333;
+    position: relative;
+}
+
+.dvizh-gallery .main {
+    border: 2px solid red;
+}
+
+.dvizh-gallery-item a.delete {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    color: red;
+}
+
+.dvizh-gallery-item a.write {
+    position: absolute;
+    top: 0px;
+    color: green;
+    text-shadow: 1px 1px 4px black ;
+}

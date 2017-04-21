@@ -1,0 +1,33 @@
+{
+    "name": "dvizh/yii2-gallery",
+    "description": "Модуль позволяет загружать виджетом картинки",
+    "keywords": ["yii2", "yii2", "application", "images", "yii2-images", "dvizh"],
+    "homepage": "https://github.com/dvizh/yii2-gallery",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "source": "https://github.com/dvizh/yii2-gallery"
+    },
+    "authors": [
+        {
+            "name": "Ilya Pistol",
+            "email": "admin@nethammer.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "kartik-v/yii2-widget-fileinput": "*",
+        "abeautifulsite/simpleimage": "2.*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "autoload": {
+        "psr-4": {
+            "dvizh\\gallery\\": "src\\"
+        }
+    }
+}

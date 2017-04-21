@@ -25,7 +25,7 @@ php composer update
 Миграция
 
 ```
-php yii migrate/up --migrationPath=@vendor/dvizh/yii2-gallery/migrations
+php yii migrate/up --migrationPath=@vendor/dvizh/yii2-gallery/src/migrations
 ```
 
 Подключение и настройка

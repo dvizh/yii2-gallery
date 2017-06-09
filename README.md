@@ -7,13 +7,13 @@ Yii2-gallery
 Выполнить команду
 
 ```
-php composer require dvizh/yii2-gallery "*"
+php composer require dvizh/yii2-gallery "@dev"
 ```
 
 Или добавить в composer.json
 
 ```
-"dvizh/yii2-gallery": "*",
+"dvizh/yii2-gallery": "@dev",
 ```
 
 И выполнить

@@ -39,6 +39,7 @@ php yii migrate/up --migrationPath=@vendor/dvizh/yii2-gallery/src/migrations
             'imagesCachePath' => dirname(dirname(__DIR__)).'/frontend/web/images/cache', //path to resized copies
             'graphicsLibrary' => 'GD',
             'placeHolderPath' => '@webroot/images/placeHolder.png',
+            'adminRoles' => ['administrator', 'admin', 'superadmin'],
         ],
         //...
     ]

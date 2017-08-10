@@ -131,6 +131,17 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
+        
+        $app = yii::$app;
+        
+        if (!isset($app->i18n->translations['gallery']) && !isset($app->i18n->translations['gallery*'])) {
+            $app->i18n->translations['gallery'] = [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'basePath' => __DIR__.'/messages',
+                'forceTranslation' => true
+            ];
+        }
+        
         if (!$this->imagesStorePath
             or
             !$this->imagesCachePath

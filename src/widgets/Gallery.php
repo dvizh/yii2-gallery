@@ -1,6 +1,7 @@
 <?php
 namespace dvizh\gallery\widgets;
 
+use yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use kartik\file\FileInput;
@@ -11,10 +12,14 @@ class Gallery extends \yii\base\Widget
     public $previewSize = '140x140';
     public $fileInputPluginLoading = true;
     public $fileInputPluginOptions = [];
-    public $label = 'Изображение';
+    public $label = null;
  
     public function init()
     {
+        if(!$this->label) {
+            $this->label = yii::t('gallery', 'Image');
+        }
+        
         $view = $this->getView();
         $view->on($view::EVENT_END_BODY, function($event) {
             echo $this->render('modal');
@@ -104,9 +109,9 @@ class Gallery extends \yii\base\Widget
     {
         $size = (explode('x', $this->previewSize));
 
-        $delete = Html::a('✖', '#', ['data-action' => Url::toRoute(['/gallery/default/delete']), 'class' => 'delete']);
-        $write = Html::a('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>', '#', ['data-action' => Url::toRoute(['/gallery/default/modal']), 'class' => 'write']);
-        $img = Html::img($image->getUrl($this->previewSize), ['data-action' => Url::toRoute(['/gallery/default/setmain']), 'width' => $size[0], 'height' => $size[1], 'class' => 'thumb']);
+        $delete = Html::a('✖', '#', ['data-action' => Url::toRoute(['/gallery/default/delete', 'id' => $image->id]), 'class' => 'delete']);
+        $write = Html::a('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>', '#', ['data-action' => Url::toRoute(['/gallery/default/modal', 'id' => $image->id]), 'class' => 'write']);
+        $img = Html::img($image->getUrl($this->previewSize), ['data-action' => Url::toRoute(['/gallery/default/setmain', 'id' => $image->id]), 'width' => $size[0], 'height' => $size[1], 'class' => 'thumb']);
         $a = Html::a($img, $image->getUrl());
 
         return $delete.$write.$a;

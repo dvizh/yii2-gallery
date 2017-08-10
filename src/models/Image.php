@@ -246,16 +246,16 @@ class Image extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Титульник',
-            'description' => 'Описание',
-            'gallery_id' => 'Id галерии',
-            'sort' => 'Положение',
-            'alt' => 'Альтернативный текст',
-            'filePath' => 'File Path',
-            'itemId' => 'Item ID',
-            'isMain' => 'Is Main',
-            'modelName' => 'Model Name',
-            'urlAlias' => 'Url Alias',
+            'title' => yii::t('gallery', 'Title'),
+            'description' => yii::t('gallery', 'Description'),
+            'gallery_id' => yii::t('gallery', 'Gallery ID'),
+            'sort' => yii::t('gallery', 'Sort'),
+            'alt' => yii::t('gallery', 'Alt attrubute'),
+            'filePath' => yii::t('gallery', 'File Path'),
+            'itemId' => yii::t('gallery', 'Item ID'),
+            'isMain' => yii::t('gallery', 'Is Main'),
+            'modelName' => yii::t('gallery', 'Model Name'),
+            'urlAlias' => yii::t('gallery', 'Url Alias'),
         ];
     }
 }

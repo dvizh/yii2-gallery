@@ -12,6 +12,7 @@ class Module extends \yii\base\Module
     public $graphicsLibrary = 'GD';
     public $placeHolderPath;
     public $waterMark = false;
+    public $waterMarkPosition = false;
     public $adminRoles = ['admin', 'superadmin'];
 
     public function getImage($item, $dirtyAlias)

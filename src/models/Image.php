@@ -207,7 +207,12 @@ class Image extends \yii\db\ActiveRecord
                         }
                     }
                 }
-                $image->overlay($waterMarkPath, 'bottom right', .5, -10, -10);
+                
+                if($this->getModule()->waterMarkPosition){
+                    $image->overlay($waterMarkPath, $this->getModule()->waterMarkPosition, .5, -10, -10);
+                } else {
+                    $image->overlay($waterMarkPath, 'bottom right', .5, -10, -10);
+                }
             }
             $image->save($pathToSave, 100);
         }
